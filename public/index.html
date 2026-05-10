@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Cursos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="auth-container" class="glass-container">
+        <h2>PLATAFORMA DE CURSOS ONLINE</h2>
+        
+        <form id="login-form">
+            <h3>Iniciar Sesión</h3>
+            <input type="email" id="login-email" placeholder="Correo electrónico" required>
+            <input type="password" id="login-password" placeholder="Contraseña" required>
+            <button type="submit" class="btn-primario">Ingresar</button>
+        </form>
+
+        <hr>
+
+        <form id="register-form">
+            <h3>Registrarse</h3>
+            <input type="text" id="reg-nombre" placeholder="Nombre completo" required>
+            <input type="email" id="reg-email" placeholder="Correo electrónico" required>
+            <input type="password" id="reg-password" placeholder="Contraseña" required>
+            <button type="submit" class="btn-primario">Crear Cuenta</button>
+        </form>
+    </div>
+
+    <div id="app-container" class="glass-container" style="display: none;">
+        <div class="header">
+            <h2>Cursos Disponibles</h2>
+            <button id="btn-logout" class="btn-secundario">Cerrar Sesión</button>
+        </div>
+
+        <div class="crear-curso-box">
+            <h3>Agregar Nuevo Curso</h3>
+            <form id="crear-curso-form">
+                <input type="text" id="curso-titulo" placeholder="Título del curso" required>
+                <input type="number" id="curso-cupo" placeholder="Cupo máximo (ej: 50)" required>
+                <input type="datetime-local" id="curso-fecha" required title="Fecha límite de inscripción">
+                
+                <button type="submit" class="btn-primario">Guardar Curso</button>
+            </form>
+        </div>
+
+        <div id="lista-cursos">
+            </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

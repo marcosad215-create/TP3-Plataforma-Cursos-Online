@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oxanium:wght@400;700&display=swap');
+
+/* ==========================================
+   VARIABLES DE COLOR CALIBRADAS CON LA FOTO
+   ========================================== */
+:root {
+    --bg-dark: #07070a; /* Negro espacial muy profundo */
+    --text-main: #f1f5f9; /* Blanco muy sutil */
+    --text-sec: #94a3b8; /* Gris azulado para secundario */
+    --success: #10b981; /* Esmeralda para cupos llenos */
+    --font-clean: 'Inter', sans-serif;
+    
+    /* Gamas de color extraídas de la foto de fondo */
+    --magenta-neón: #1c86ff; /* Fucsia brillante de la espiral */
+    --cian-neón: #1cffec; /* Cian brillante del centro de la espiral */
+    --magenta-gradient: linear-gradient(135deg, #1c86ff, #1c86ff); /* Gradiente del botón principal */
+    --cian-subtle: rgba(28, 255, 236, 0.1); /* Brillo sutil cian para hover */
+}
+
+body {
+    font-family: var(--font-clean);
+    background-color: var(--bg-dark);
+    
+    /* ==========================================
+       TU NUEVA IMAGEN DE FONDO
+       ========================================== */
+    background-image: url('/fondo.jpg'); /* Asegurate de que el archivo esté en public */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* ======================================== */
+
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    letter-spacing: -0.01em;
+}
+
+/* ==========================================
+   EFECTO GLASSMORPHISM DEFINITIVO (Transparencia perfecta)
+   ========================================== */
+#auth-container, #app-container {
+    background: rgba(13, 13, 20, 0.25); /* <-- Lo bajamos a 0.25 */
+    backdrop-filter: blur(10px); /* <-- Un toque menos de blur para mayor nitidez */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borde un poquito más visible para enmarcar */
+    padding: 45px;
+    border-radius: 28px;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+h2 {
+    font-family: var(--font-clean);
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    background: linear-gradient(to right, #ffffff, #a1a1aa);
+    -webkit-background-clip: text;
+    background-clip: text; /* <--- Agregá esta línea */
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
+}
+
+h3, h4 {
+    font-family: var(--font-clean);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* ==========================================
+   TUS INPUTS (Mantenidos y calibrados)
+   ========================================== */
+input {
+    background-color: rgba(10, 10, 15, 0.7); /* Más oscuro y transparente */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    width: calc(100% - 36px); /* Ajuste de ancho */
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cian-neón); /* Ahora brilla en Cian cuando escribís */
+    box-shadow: 0 0 15px rgba(28, 255, 236, 0.2);
+}
+
+/* ==========================================
+   BOTONES MODERNOS (Fusión con los colores de la foto)
+   ========================================== */
+button {
+    font-family: var(--font-clean);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 30px;
+    border-radius: 50px; /* Forma de píldora */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 10px;
+}
+
+/* Botón principal (Fucsia/Magenta extraído de la espiral) */
+.btn-primario {
+    background: var(--magenta-gradient);
+    color: white;
+    box-shadow: 0 4px 18px rgba(28, 89, 255, 0.3);
+}
+
+.btn-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(28, 89, 255, 0.3);
+}
+
+/* Botón secundario (Transparente con borde blanco) */
+.btn-secundario {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: white;
+}
+
+/* Botón deshabilitado (Gris súper sutil) */
+.btn-disabled {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   ESTRUCTURA DE LOS CURSOS MODERNA
+   ========================================== */
+.curso-item {
+    background-color: rgba(255, 255, 255, 0.02); /* Fondo súper leve */
+    padding: 25px;
+    border-radius: 20px; /* Tarjetas redondas */
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
+}
+
+.curso-item:hover {
+    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(28, 255, 236, 0.2); /* Sutil brillo Cian de la espiral al hover */
+}
+
+.curso-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.curso-item p {
+    margin: 6px 0;
+    font-size: 0.98rem;
+    color: var(--text-sec);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 20px 0;
+}
+
+/* Header y Logout modernos */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+#btn-logout {
+    padding: 10px 20px;
+    font-size: 0.88rem;
+}
+
+/* Caja de Administrador modernizada */
+.crear-curso-box {
+    background: rgba(255, 255, 255, 0.01);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+}
